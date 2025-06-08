@@ -1,0 +1,71 @@
+@startuml
+
+skinparam actorStyle awesome
+
+'---
+
+'Actors
+'Actor type - patient'
+actor "Irish Female\n    Patient"                   as irish_female
+
+'Actor type - patient'
+actor "Irish Consultant"                            as irish_consultant
+actor "Spanish Surgical\n     Consultant"           as spanish_surgical_consultant
+
+'Actor type - Healthcare service / Organization'
+actor "Irish Health Service"                        as irish_health_service
+actor "Hospital Ward"                               as hospital_ward
+actor "Emergency Department"                        as emergency_department
+actor "MyHealth@EU eHealth\n  Cross Border Service" as ehealth_cross_border_service
+
+'Actor type - collective'
+actor "Ambulance"                                   as ambulance
+
+'Actor type - device (dicom enabled?)'
+actor "MRI Scanner"                                 as mri_scanner
+
+'---
+
+'Use cases'
+usecase "Regular Check Up"                          as regular_check_up
+usecase "Application to Health Care Service"        as application_healthcare_service
+usecase "Emergency Episode Requiring MRI"           as related_emergency_episode
+usecase "Application to MyHealth@EU Service"        as application_myhealtheu_service
+usecase "Verification of Patient Identity"          as verify_patient_identity
+usecase "Verify User Access"                        as verify_user_access
+usecase "Access Patient Health Record"              as access_phr
+usecase "Surgical Intervention in Spain"            as surgery_procedure
+
+'---
+
+irish_female -- regular_check_up
+irish_consultant -up- regular_check_up
+
+irish_female -- application_healthcare_service
+irish_consultant -- application_healthcare_service
+irish_health_service -up- application_healthcare_service 
+
+irish_female -- related_emergency_episode
+ambulance -- related_emergency_episode
+emergency_department -- related_emergency_episode
+mri_scanner -- related_emergency_episode
+hospital_ward -- related_emergency_episode
+related_emergency_episode .> access_phr : <<include>>
+
+irish_female -- application_myhealtheu_service
+ehealth_cross_border_service -- application_myhealtheu_service
+spanish_surgical_consultant -- application_myhealtheu_service
+application_myhealtheu_service .down.> verify_patient_identity : <<include>>
+application_myhealtheu_service .> application_healthcare_service : <<include>>
+
+irish_female -- surgery_procedure
+spanish_surgical_consultant -up- surgery_procedure
+spanish_surgical_consultant -- access_phr
+surgery_procedure .> access_phr : <<include>>
+
+'access_phr .> verify_patient_identity : <<include>>
+application_healthcare_service .> verify_patient_identity : <<include>>
+access_phr .down.> verify_user_access : <<include>>
+verify_user_access .right.> verify_patient_identity : <<extend>>
+
+@enduml

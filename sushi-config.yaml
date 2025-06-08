@@ -9,7 +9,7 @@ version: 0.1.0-ballot
 fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 #fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
-releaseLabel: ballot # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: 	http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe" # urn:iso:std:iso:3166#EU
 publisher:
@@ -40,35 +40,41 @@ dependencies:
   #   uri: http://fhir.org/packages/fhir.dicom
   #   version: 2025.2.20250411
   
-pages:
-  index.md:
-    title: Home
-    changes.md: 
-      title: Changes
-    adapting.md: 
-      title: Adapting Guidelines for Country use	
-    contributors.md:
-      title: Contributors
-  actors-and-transactions.md:
-    title: Actors and Transactions
-  xtehr.md:
-    title: XtEHR
-    xtehr-logical-model.md:
-      title: XtEHR Logical Model
-    xtehr-mapping.md:
-      title: Mapping to XtEHR Logical Model
-  profiles.md:
-    title: Deployment profiles
-    imaging-manifest.md:
-      title: Imaging Manifest
-    imaging-report.md:
-      title: Imaging Report
-  design-considerations.md:
-    title: Design Considerations
-  artifacts-intro.md:
-    title: Artifacts
-    artifacts-structural.md:
-      title: Structural artifacts
+#pages:
+#  index.md:
+#    title: Home
+#    changes.md: 
+#      title: Changes
+#    adapting.md: 
+#      title: Adapting Guidelines for Country use	
+#    contributors.md:
+#      title: Contributors
+#  actors-and-transactions.md:
+#    title: Actors and Transactions
+#    system-actors.md:
+#      title: System Actors
+#    use-cases-xtehr.md:
+#      title: Use Cases
+#    transactions.md:
+#  xtehr.md:
+#    title: XtEHR
+#    xtehr-logical-model.md:
+#      title: XtEHR Logical Model
+#    xtehr-mapping.md:
+#      title: Mapping to XtEHR Logical Model
+#  profiles.md:
+#    title: Deployment profiles
+#    imaging-manifest.md:
+#      title: Imaging Manifest
+#    imaging-report.md:
+#      title: Imaging Report
+#  design-considerations.md:
+#    title: Design Considerations
+#  artifacts-intro.md:
+#    title: Artifacts
+#    artifacts-structural.md:
+#      title: Structural artifacts
+
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
 # resource), the code is the YAML key. If a parameter allows repeating
@@ -118,7 +124,12 @@ menu:
     Dependencies: index.html#dependencies
     References: index.html#references
     Adapting Guidelines for Country use: adapting.html
-  Actors and Transactions: actors-and-transactions.html
+  Actors and Transactions:
+    System Actors: system-actors.html
+    Use Cases: 
+      Descriptions: use-cases-xtehr.html
+      Stroke (Imaging Study and Related Report), UC1: use-cases-XtEHR-UC1.html
+    Transactions: transactions.html
   XtEHR model:
     XtEHR-model: xtehr-logical-model.html
     XtEHR-mapping: xtehr-mapping.html

@@ -1,0 +1,57 @@
+@startuml
+
+skinparam actorStyle hollow
+
+actor        "Patient"                      as patient
+actor        "Ambulance"                    as ambulance
+actor        "Emergency Dept"         as emergency_dept
+actor        "Hospital"                     as hospital
+actor        "MRI"                          as mri
+participant  "PHR API"                      as api
+entity       "Patient"                      as patient_entity
+entity       "Encounter"                    as encounter
+entity       "CareTeam"                     as careteam
+entity       "CarePlan"                     as careplan
+entity       "ClinicalImpression"           as clinical_impression
+entity       "Condition"                    as condition
+'leaving out any details of tasks or orchestration needs
+entity       "ServiceRequest"               as servicerequest
+entity       "DICOM Series"                 as dicomseries
+entity       "ImagingStudy"                 as imagingstudy
+
+
+patient -> ambulance : Call
+'Not including patient indexing details or other data here for brevity
+activate ambulance
+'Emergency response team
+ambulance <- careteam : Assign care team
+ambulance <- patient_entity : Access patient record
+ambulance -> patient : Respond\nand triage
+ambulance -> encounter : Record encounter
+ambulance -> careplan : Create initial care plan
+
+emergency_dept -> ambulance : Triage &\nadmit patient
+deactivate ambulance
+activate emergency_dept
+'CareTeam of registrars, consultants etc.
+emergency_dept <- careteam : Assign care team
+emergency_dept <- patient_entity : Access patient record
+emergency_dept -> patient : Assess patient
+emergency_dept -> encounter : Record encounter
+emergency_dept -> clinical_impression : Record initial assessment
+emergency_dept -> hospital : Admit to ward
+deactivate emergency_dept
+
+activate hospital
+hospital -> clinical_impression : Consultant review
+deactivate hospital
+activate clinical_impression
+clinical_impression -> condition : Record condition\nrequiring MRI
+clinical_impression -> servicerequest : Authorise / request MRI scan
+deactivate clinical_impression
+
+mri -> dicomseries : Perform scan & output DICOM
+activate dicomseries
+dicomseries -> imagingstudy : Link series to
+
+@enduml
