@@ -1,4 +1,4 @@
-name: SUSHI Publish NHSE
+name: SUSHI Publish
 
 on:
   push:
