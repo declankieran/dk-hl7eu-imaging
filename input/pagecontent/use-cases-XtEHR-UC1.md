@@ -8,7 +8,7 @@ An [Irish female patient](ActorDefinition-IrishFemalePatient.html) visits a hosp
 
 ## Use Case Diagram
 
-<div style="text-align: left;">
+<div style="text-align: left;max-width: 100%">
   {%include use-cases-XtEHR-UC1.svg%}
 </div>
 
@@ -43,6 +43,6 @@ The main use cases identified from the example story from the use case descripti
 
 > NOTE: Other resources would likely be required (illustrated in the data entities), however for brevity on the main resources required within the use case are included.  There are also potentially many relevant optional and alternative flows, but have been left out again for brevity.
 
-<div style="text-align: left;">
+<div style="text-align: left;max-width: 100%">
   {%include use-cases-XtEHR-UC1-mri-seq.svg%}
 </div>
