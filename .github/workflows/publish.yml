@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Install Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 'current'
   
@@ -23,7 +23,7 @@ jobs:
         run: ./_updatePublisher.sh -y
 
       - name: Install Java
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '11'
           distribution: 'adopt'
@@ -41,7 +41,7 @@ jobs:
         run: ./_genonce.sh
 
       - name: Publish IG Artefact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: IG Archive
           path: ./output/
