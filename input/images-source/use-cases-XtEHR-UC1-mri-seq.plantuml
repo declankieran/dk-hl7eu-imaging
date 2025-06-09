@@ -44,11 +44,9 @@ deactivate emergency_dept
 
 activate hospital
 hospital -> clinical_impression : Consultant review
+hospital -> condition : Record condition\nrequiring MRI
+hospital -> servicerequest : Authorise / request MRI scan
 deactivate hospital
-activate clinical_impression
-clinical_impression -> condition : Record condition\nrequiring MRI
-clinical_impression -> servicerequest : Authorise / request MRI scan
-deactivate clinical_impression
 
 mri -> dicomseries : Perform scan & output DICOM
 activate dicomseries
