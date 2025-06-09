@@ -125,11 +125,10 @@ menu:
     References: index.html#references
     Adapting Guidelines for Country use: adapting.html
   Actors and Transactions:
-    System Actors: system-actors.html
+    Actors and Transactions: actors-and-transactions.html
     Use Cases: 
       Descriptions: use-cases-xtehr.html
       Stroke (Imaging Study and Related Report), UC1: use-cases-XtEHR-UC1.html
-    Transactions: transactions.html
   XtEHR model:
     XtEHR-model: xtehr-logical-model.html
     XtEHR-mapping: xtehr-mapping.html

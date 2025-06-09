@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="" defaultVersion="current" defaultWorkgroup="eu" gitUrl="https://github.com/HL7-eu/imaging-r5" url="http://hl7.eu/fhir/imaging-r5">
-<version code="current" url=""/>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.eu/fhir/imaging-r5/0.1.0-ballot" ciUrl="https://build.fhir.org/ig/hl7-eu/imaging-r5" defaultVersion="0.1.0-ballot" defaultWorkgroup="eu" gitUrl="https://github.com/HL7-eu/imaging-r5" url="http://hl7.eu/fhir/imaging-r5">
+<version code="current" url="https://build.fhir.org/ig/hl7-eu/imaging-r5"/>
+<version code="0.1.0-ballot" url="http://hl7.eu/fhir/imaging-r5/0.1.0-ballot"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
@@ -84,6 +85,7 @@
 <artifact id="StructureDefinition/EHDSImmunization" key="StructureDefinition-EHDSImmunization" name="Immunization model"/>
 <artifact id="StructureDefinition/EHDSInpatientEncounter" key="StructureDefinition-EHDSInpatientEncounter" name="Inpatient encounter model"/>
 <artifact id="StructureDefinition/instance-description" key="StructureDefinition-instance-description" name="Instance Description"/>
+<artifact id="ActorDefinition/IrishFemalePatient" key="ActorDefinition-IrishFemalePatient" name="Irish Female Patient"/>
 <artifact id="StructureDefinition/ImKeyImageImagingSelection" key="StructureDefinition-ImKeyImageImagingSelection" name="Key images represented as an ImagingSelection"/>
 <artifact id="StructureDefinition/EHDSLaboratoryObservation" key="StructureDefinition-EHDSLaboratoryObservation" name="Laboratory observation model"/>
 <artifact id="StructureDefinition/EHDSLaboratoryOrder" key="StructureDefinition-EHDSLaboratoryOrder" name="Laboratory order"/>
@@ -228,19 +230,34 @@
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="actors-and-transactions" name="Actors and Transactions"/>
-<page key="adapting" name="Adapting Guidelines for Country use"/>
-<page key="artifacts-intro" name="Artifacts"/>
+<page key="adapting" name="Adapting"/>
+<page deprecated="true" key="artifacts-intro" name="Artifacts"/>
+<page key="artifacts-structural" name="Artifacts Structural"/>
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="changes" name="Changes"/>
 <page key="contributors" name="Contributors"/>
-<page key="profiles" name="Deployment profiles"/>
+<page key="design-consideration-actors-obligations" name="Design Consideration Actors Obligations"/>
+<page key="design-consideration-composition-diagnosticreport" name="Design Consideration Composition Diagnosticreport"/>
+<page key="design-consideration-composition-structure" name="Design Consideration Composition Structure"/>
+<page key="design-consideration-data-entrypoints" name="Design Consideration Data Entrypoints"/>
+<page key="design-consideration-endpoint-definitions" name="Design Consideration Endpoint Definitions"/>
+<page key="design-consideration-healthcareprofessional" name="Design Consideration Healthcareprofessional"/>
+<page key="design-consideration-keyimages" name="Design Consideration Keyimages"/>
+<page key="design-consideration-linking-to-bodysites" name="Design Consideration Linking to Bodysites"/>
+<page key="design-consideration-procedure-adverse-reaction" name="Design Consideration Procedure Adverse Reaction"/>
+<page key="design-consideration-procedure-phases" name="Design Consideration Procedure Phases"/>
+<page key="design-consideration-radiation-dose-summary" name="Design Consideration Radiation Dose Summary"/>
 <page key="design-considerations" name="Design Considerations"/>
+<page key="design-considerations-report-and-manifest" name="Design Considerations Report and Manifest"/>
 <page key="index" name="Home"/>
 <page key="imaging-manifest" name="Imaging Manifest"/>
 <page key="imaging-report" name="Imaging Report"/>
-<page key="xtehr-mapping" name="Mapping to XtEHR Logical Model"/>
-<page key="artifacts-structural" name="Structural artifacts"/>
+<page key="profiles" name="Profiles"/>
 <page key="toc" name="Table of Contents"/>
-<page key="xtehr" name="XtEHR"/>
-<page key="xtehr-logical-model" name="XtEHR Logical Model"/>
+<page key="todo" name="Todo"/>
+<page key="use-cases-XtEHR-UC1" name="Use Cases Xt EHR UC 1"/>
+<page key="use-cases-xtehr" name="Use Cases Xtehr"/>
+<page key="xtehr" name="Xtehr"/>
+<page key="xtehr-logical-model" name="Xtehr Logical Model"/>
+<page key="xtehr-mapping" name="Xtehr Mapping"/>
 </specification>
